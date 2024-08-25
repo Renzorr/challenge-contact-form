@@ -1,0 +1,203 @@
+/* ------------------------- Fonts -------------------------------------------------- */
+
+@font-face {
+  font-family: "Karla";
+  src: url("../assets/fonts/karla-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("../assets/fonts/karla-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------- Variables -------------------------------------------------- */
+
+:root {
+  --color-green-light: hsl(148, 38%, 91%);
+  --color-green: hsl(169, 82%, 27%);
+  --color-green-lemon: hsl(169, 64%, 45%);
+
+  --color-gray: hsl(186, 15%, 59%);
+  --color-gray-dark: hsl(187, 24%, 22%);
+
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-alert: hsl(0, 66%, 54%);
+
+  --padding-lg: clamp(2px, 5vw, 40px);
+
+  --rounded-lg: 12px;
+  --rounded-sm: 8px;
+}
+
+/* ------------------------- Utilities -------------------------------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.form-row-item {
+  flex: 1;
+}
+
+/* ------------------------- Form -------------------------------------------------- */
+
+.form-title {
+  font-size: 32px;
+  color: var(--color-gray-dark);
+  letter-spacing: -1.1px;
+  margin-bottom: 31px;
+}
+
+.form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ------------------------- Query Type -------------------------------------------------- */
+
+fieldset legend {
+  margin-bottom: 18px;
+}
+
+.query-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.query-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 15px;
+  border: 1px solid var(--color-green);
+  border-radius: 8px;
+  padding-block: 14px;
+  padding-inline: 26px;
+  overflow: hidden;
+}
+
+.query-item label {
+  font-size: 18px;
+  z-index: 1;
+}
+
+.query-item::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.query-item:has(input:checked)::before {
+  background-color: var(--color-green-light);
+}
+
+/* ------------------------- Message -------------------------------------------------- */
+
+.message {
+  margin-bottom: 16px;
+
+  & textarea {
+    min-height: 105px;
+  }
+}
+
+/* ------------------------- Consent -------------------------------------------------- */
+
+.consent {
+  align-items: center;
+  gap: 10px;
+  margin-left: 4px;
+  margin-bottom: 6px;
+}
+
+/* ------------------------- Button Submit -------------------------------------------------- */
+
+.btn-submit {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  padding-block: 18px;
+  border-radius: 6px;
+  margin-top: 17px;
+}
+
+/* ------------------------- Error -------------------------------------------------- */
+
+.error {
+  display: block;
+  font-size: 14px;
+  margin-top: 10px;
+  color: var(--color-alert);
+}
+
+/* ------------------------- Toast -------------------------------------------------- */
+
+.toast {
+  position: absolute;
+  inset: 0;
+  padding-inline: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.1s;
+}
+
+.active {
+  opacity: 1;
+}
+
+.toast-item {
+  width: 100%;
+  max-width: 450px;
+  height: min-content;
+  color: var(--color-white);
+  background-color: var(--color-gray-dark);
+  border-radius: var(--rounded-lg);
+  padding: 27px 20px 27px 26px;
+  margin-inline: auto;
+  margin-top: 24px;
+}
+
+.toast-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 13px;
+}
+/* ------------------------- Media Queries -------------------------------------------------- */
+
+@media (width <= 768px) {
+  .form-row:not(.consent) {
+    flex-direction: column;
+  }
+}

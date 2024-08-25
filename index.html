@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Contact Form Frontend Mentor Challenge" />
+    <meta name="description" content="Junior Frontend Mentor Challenge using browser features">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Contact Form | Frontend Mentor</title>
+  </head>
+  <body>
+    <h1 class="sr-only">Contact Form Challenge from Frontend Mentor</h1>
+    <main>
+      <form action="/">
+        <h2 class="form-title">Contact Us</h2>
+        <div class="form-area">
+          <div class="form-row">
+            <div class="form-row-item">
+              <div class="form-group">
+                <label for="firstname">First Name *</label>
+                <input
+                  type="text"
+                  name="first-name"
+                  id="firstname"
+                  aria-describedby="first-name-error"
+                  data-input
+                  required
+                />
+              </div>
+              <span id="first-name-error" class="error"></span>
+            </div>
+
+            <div class="form-row-item">
+              <div class="form-group">
+                <label for="lastname">Last Name *</label>
+                <input
+                  type="text"
+                  name="last-name"
+                  id="lastname"
+                  aria-describedby="last-name-error"
+                  data-input
+                  required
+                />
+              </div>
+              <span id="last-name-error" class="error"></span>
+            </div>
+          </div>
+
+          <div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                aria-describedby="email-error"
+                data-input
+                required
+              />
+            </div>
+            <span id="email-error" class="error"></span>
+          </div>
+
+          <fieldset>
+            <legend>Query Type *</legend>
+
+            <div class="form-row">
+              <div class="query-item">
+                <input
+                  type="radio"
+                  name="query"
+                  id="enquiry"
+                  aria-describedby="query-error"
+                  data-input
+                  required
+                />
+                <label for="enquiry" class="label">General Enquiry</label>
+              </div>
+
+              <div class="query-item">
+                <input
+                  type="radio"
+                  name="query"
+                  id="request"
+                  aria-describedby="query-error"
+                  data-input
+                  required
+                />
+                <label for="request">Support Request</label>
+              </div>
+            </div>
+
+            <span id="query-error" class="error"></span>
+          </fieldset>
+
+          <div class="message">
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                name="message"
+                id="message"
+                aria-describedby="message-error"
+                data-input
+                required
+              ></textarea>
+            </div>
+            <span id="message-error" class="error"></span>
+          </div>
+
+          <div>
+            <div class="form-row consent">
+              <input
+                type="checkbox"
+                name="consent"
+                id="consent"
+                aria-describedby="consent-error"
+                data-input
+                required
+              />
+              <div class="custom-checkbox"></div>
+              <label for="consent"
+                >I consent to being contacted by the team *</label
+              >
+            </div>
+            <span id="consent-error" class="error"></span>
+          </div>
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+
+      <div class="toast">
+        <div class="toast-item">
+          <div class="toast-row">
+            <img
+              src="./assets/images/icon-success-check.svg"
+              alt="success icon"
+            />
+            <span>Message Sent!</span>
+          </div>
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

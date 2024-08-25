@@ -1,0 +1,118 @@
+/* ------------------------- Reset -------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  font-size: clamp(15px, 1.2vw, 16px);
+  font-family: "Karla", sans-serif;
+  color: var(--color-gray-dark);
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  background-color: var(--color-green-light);
+}
+
+form {
+  width: 100%;
+  max-width: 735px;
+  height: min-content;
+  background-color: var(--color-white);
+  border-radius: var(--rounded-lg);
+  padding: 38px var(--padding-lg);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-size: 16px;
+  border: 1px solid var(--color-green);
+  border-radius: var(--rounded-sm);
+  padding-block: 15px;
+  padding-inline: 14px;
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid var(--color-green-lemon);
+  }
+
+  &.input-error {
+    border: 1px solid var(--color-alert);
+  }
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-gray);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+input[type="radio"]:before {
+  content: "";
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition: 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: var(--color-green);
+  transform: scale(0);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 17px;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url(../assets/images/icon-checkbox-check.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+fieldset {
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border: none;
+  cursor: pointer;
+}
